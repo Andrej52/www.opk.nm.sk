@@ -1,0 +1,267 @@
+@media only screen and (max-width: 1920px) {    /* For PC: */
+    #toggle
+    {
+        display: none;
+    }
+    /* navbar */
+    .navbar
+    {
+        background-color: rgb(0, 0, 0);
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .dropdown
+    {
+        width: 100%;
+    }
+    .dropdown-content
+    {
+        min-width: 200px;
+        height: fit-content;
+        margin-top: 50px;
+    }
+}
+
+  @media only screen and (max-width: 1440px) {    /* For notebooks: */
+    /*navbar*/
+    .navbar
+    {
+        width: 20%;
+    }
+
+    .nav-a
+    {
+        font-size: 13px;
+    }
+
+    .nav-drop   button
+    {
+        position: relative;
+        right: 30px;
+    }
+
+    .dropdown-content
+    {
+        min-width: 150px;
+        height: fit-content;
+        margin-top: 50px;
+    }
+}
+
+  @media only screen and (max-width: 1024px) {    /* For laptops: */
+
+        /*navbar*/
+    .navbar
+    {
+        width:14%;
+    }
+
+    .nav-a
+    { 
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .nav-drop   button
+    {
+        position: relative;
+        right: 5px;
+    }
+    .dropdown-content
+    {
+        min-width: 150px;
+        height: fit-content;
+    }
+    .dropdown-content a
+    {
+        padding: 5px;
+        position: relative;
+        font-size: 13px;
+    }
+    .dropdown-content a:focus, 
+    .dropdown-content a:hover {
+        background-color: rgb(18, 156, 0);
+        padding: 7px;
+        display: block;
+    }
+    .bodywrap
+    {
+        flex-direction: column;
+    }
+
+    .sidebar img
+    {
+        width: 300px;
+        height: auto;
+    }
+    /*main*/
+    main
+    {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+
+    .topic-image
+    {
+        padding: 20px;
+        width: 40%;
+    }
+    .sidebar
+    {
+        font-size: 20px;
+        width: 100%;
+        align-content: center;
+    }
+    /*main*/
+
+
+}
+
+  @media only screen and (max-width: 1000px) {    /* For tablets: */
+    /*tlacitka*/
+    #toggle
+    {
+        display: block;
+    }
+    .dropdown-toggle-button
+    {
+        background-color: rgba(128, 128, 128, 0.205);
+    }
+    /*tlacitka*/
+    .body-wrap
+    {
+        flex-direction: column;;
+    }
+    body
+    {
+        height: fit-content;
+        width: auto;
+    }
+    header
+    {
+        background-color:  rgb(0, 48, 4);;
+    }
+
+    /*navbar*/
+
+    nav
+    {
+
+        display:none;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        max-height: fit-content;
+        max-width: 200px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+
+    .navbar
+    {
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        width: 200px;
+        max-width: 200px;
+        height: 50px;
+    }
+    .nav-a{ 
+        font-size: 15px;
+        width: 100%;
+        min-width: 150px;
+    }
+    .dropdown-content{
+        width: inherit;
+        min-width: fit-content;
+        height: fit-content;
+        display: none;
+        flex-direction: column;
+    }
+    .dropdown-content a{
+        height: 30px;
+        line-height: 30px;
+        max-width: 200px;
+    }
+     /*navbar*/
+
+    /*adminpanel*/
+    .adminpanel{
+        width: 200px;
+        margin-top: 0px;  
+    }
+     /*main*/
+    main{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topic {
+        font-size: 10px;
+    }
+    .topic h3{
+        font-size: 15px;
+    }
+    .sidebar
+    {
+        font-size: 20px;
+        width: 100%;
+    }
+    .sidebar div
+    {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        width: fit-content;
+    }
+    
+            /*  topic   */
+
+.topic{
+    display: flex;
+    flex-direction:column;
+}
+.topic-image{
+    width: 80%;
+    height: auto;
+    margin:auto;
+}
+.content{
+    width: fit-content;
+    display: flex;
+    flex-direction:column;
+    padding: 20px;
+    margin: auto; 
+}
+
+.map
+{
+    content: url("");
+}
+    
+
+}
+
+  @media only screen and (max-width: 600px) {    /* For mobiles: */
+    header
+    {
+        display: none;
+    }
+    /*main*/
+    main
+    {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    /*main*/
+
+    .adminpanel{
+        font-size: 15px;
+    }
+}

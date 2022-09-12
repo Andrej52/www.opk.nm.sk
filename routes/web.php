@@ -20,12 +20,14 @@ use App\Http\Controllers\AuthController;
 // Visitor section
 Route::get('/', [ PageController::class, 'homepage' ]);
 Route::get('/gallery', [ PageController::class, 'gallery' ]);
+Route::get('/contact', [ PageController::class, 'contact' ]);
+Route::get('/courses', [ PageController::class, 'courses' ]);
+Route::get('/oko', [ PageController::class, 'oko_spz' ]);
+Route::get('/OPK_crew', [ PageController::class, 'opk_crew' ]);
 Route::group([
-    'prefix' => 'shooting-range',
-    //'middleware' => 'auth',
 ], function () {
-    Route::get('/Nova_Lehota', [ AdminController::class, 'Lehota' ]);
-    Route::get('/Beckov', [ AdminController::class, 'Beckov' ]);
+    Route::get('/Lehota', [ PageController::class, 'shooting_range_Lehota' ]);
+    Route::get('/Beckov', [ PageController::class, 'shooting_range_Beckov' ]);
 
 });
 

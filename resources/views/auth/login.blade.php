@@ -26,3 +26,22 @@
         </div>
     </body>
 </html>
+
+<script>
+        /*  Admin password show */
+        function show_Password(showPassword)
+        {   
+        if (showPassword.checked === true) 
+            document.querySelector("#password").setAttribute("type","text");
+        else
+            document.querySelector("#password").setAttribute("type","password");
+        };
+        function checkEvt(){
+        var evTypep=window.performance.getEntriesByType("navigation")[0].type;
+        if (evTypep=='reload')
+         window.location.replace("login");
+        }
+        document.querySelector(".login-btn").addEventListener("click", (event) => {
+            document.querySelector(".forgot-password-btn").style.display = "flex";
+        })
+</script>

@@ -1,0 +1,51 @@
+header
+{
+   background-color: rgb(255, 255, 255); 
+   width: 100% !important;
+}
+header div{
+    color: black;
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+
+main
+{
+    min-height: 100vh;
+}
+section
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1em;
+}
+.add-btn
+{
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.add-btn:hover
+{
+    color: yellow;
+
+}
+
+.frame
+{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border:2px solid red;
+    width: 200px;
+    height: 200px;
+
+}
+.thumbnail
+{
+ width: 100%;   
+ height: 80%;
+}

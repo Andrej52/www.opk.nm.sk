@@ -1,0 +1,54 @@
+.fa-home {
+    color: rgb(0, 194, 10);
+}
+
+.fa-caret-up {
+    color: rgb(255, 255, 255);
+}
+.fa-caret-down
+{
+    color: white;
+}
+.fa-phone {
+    color: rgb(255, 11, 11);
+    padding-right: 10px;
+}
+
+.fa-envelope {
+    color: rgb(255, 255, 255);
+    padding-right: 5px;
+}
+
+.fa-address-book {
+    color: rgb(255, 255, 255);
+    padding-right: 5px;
+}
+
+.fa-money {
+    color: rgb(255, 255, 255);
+    padding-right: 5px;
+}
+
+.fa-map-marker {
+    color: rgb(255, 251, 0);
+    padding-right: 5px;
+}
+
+.fa-file-pdf-o {
+    color: rgb(209, 0, 0);
+    background-color: white;
+}
+.fa-file-word-o {
+    color: rgb(9, 26, 255);
+    background-color: white;
+}
+.fa-bars 
+{
+    color: rgb(255, 0, 0); 
+    transition: transform 0.3s linear;
+}
+.fa-times
+{
+    color: rgb(255, 0, 0);
+    transition: transform 0.3s linear;
+}
