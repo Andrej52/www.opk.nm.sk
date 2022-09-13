@@ -1,7 +1,7 @@
 <section class="adminpanel"> 
   <li>Prihálesný ako:</li>
   <li><button><a href="management">Spravovať</a></button></li>
-  <li><button id="SignOut" class="logout-btn" onclick="">Logout</button></li>        
+  <li><button id="SignOut" class="logout-btn"><a href="{{ route('logout') }}">Logout</a></button></li>        
 </section>
 
 <script>

@@ -19,11 +19,15 @@ use App\Http\Controllers\AuthController;
 
 // Visitor section
 Route::get('/', [ PageController::class, 'homepage' ]);
+Route::get('/strelectvo', [ PageController::class, 'shooting' ]);
+Route::get('/kynology', [ PageController::class, 'kynology' ]);
 Route::get('/gallery', [ PageController::class, 'gallery' ]);
 Route::get('/contact', [ PageController::class, 'contact' ]);
 Route::get('/courses', [ PageController::class, 'courses' ]);
 Route::get('/oko', [ PageController::class, 'oko_spz' ]);
 Route::get('/OPK_crew', [ PageController::class, 'opk_crew' ]);
+Route::get('/statute', [ PageController::class, 'statutes' ]);
+Route::get('/hunt_statutes', [ PageController::class, 'hunt_statutes' ]);
 Route::group([
 ], function () {
     Route::get('/Lehota', [ PageController::class, 'shooting_range_Lehota' ]);
@@ -42,7 +46,7 @@ Route::group([
     'middleware' => 'auth',
 ], function () {
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
-    Route::get('/manage/', [ AdminController::class, 'manage' ]);
+    Route::get('/manage/', [ AdminController::class, 'management' ]);
     Route::get('/manage/topic', [ AdminController::class, 'topic' ]);
     Route::get('/manage/gallery', [ AdminController::class, 'gallery' ]);
     Route::get('/manage/event', [ AdminController::class, 'event' ]);

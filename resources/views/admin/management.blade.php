@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +7,14 @@
     <title>Management page</title>
 </head>
 <body>
-<a href="./manage/topic">Topics</a>
-    <a href="./manage/event">eventy</a>
-    <a href="./manage/gallery">gallerie</a>
+            <main>
+                <h1>Vitajte  admin </h1>
+                <li>
+                    <a href="./manage/topic">Topics</a>
+                    <a href="./manage/event">eventy</a>
+                    <a href="./manage/gallery">gallerie</a>
+                </li>
+            </main>
+        </div>
 </body>
 </html>

@@ -6,7 +6,7 @@
         <div class="nav-drop"><a href="/" class="nav-a ">Aktuality</a><button class="dropdown-toggle-button fa fa-caret-down"></button></div>
         <div class="dropdown-content">
             <a  href="strelectvo">Strelectvo</a>
-            <a  href="kynologia">Kynologia</a>
+            <a  href="kynology">Kynologia</a>
             <a  href="gallery">Fotogaléria</a>
         </div>
     </li>

@@ -62,6 +62,7 @@ class PageController extends Controller
     { 
         return view('range-Lehota');    
     }
+ 
 /*
     function changeLang($langcode){
     
