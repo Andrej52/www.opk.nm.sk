@@ -52,11 +52,5 @@ Route::group([
     Route::get('/manage/topic/{action}', [ManageController::class,'check']);
     Route::get('/manage/gallery/{action}/{id}',[ManageController::class,'check']);
     Route::get('/manage/event/{action}/l{id}',[ManageController::class,'check']);
-    
-    // GET: /admin/gallery/create ->zobrazi coreate form
-    // POST: /admin/gallery -> vytvori novu galeriu
-    // GET /admin/gallery/123 -> zobrazi edit form pre galeriu 123
-    // PATCH/POST /admin/gallery/123 -> updatne data
-
 });
 

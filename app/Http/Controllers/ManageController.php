@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+
 
 class ManageController extends Controller
 {
-    public function show()
+   
+    public function show()   //method do get all data from  tables below
     {
         $data[0]=DB::table('topics')->get();
         $data[1]=DB::table('galleries')->get();
@@ -17,34 +17,37 @@ class ManageController extends Controller
 
     public function check($action)
     {
-
-
-        if ($action == "add") 
-        {
-            var_dump("add");
-        }        
-        else
-        {
-            if ($action == "edit") 
+            if ($action == "add") 
             {
-              var_dump("edit");
+                return view("admin.manage.topic")->with('action',$action);
             }
-            elseif ($action == "delete") {
-                var_dump('delete');
-            }
-        }
-        
+            elseif ($action == "edit") 
+            {
+                
+                $data =DB::table();
+                return view("admin.manage.topic")->with('action',$action);
+            }        
     }
-
-    public function add()
-    {
-    }
-    public function edit()
+    
+    public function add_view()
     {
 
     }
-    public function delete()
-    {
+    public function add($tablename,Request $data)
+    {   
+        DB::table($tablename)
+        ->updateOrInsert(
+            // ['email' => 'picard@example.com', 'votes' => 0],
+        );
+        return view("admin.manage");
         
+    }
+    public function delete($tablename,$id)
+    {
+        DB::table($tablename)
+        ->where('id','=' , $id)
+        ->delete();
+        return view("admin.manage");
+        exit();
     }
 }
