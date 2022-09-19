@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Request;
 
 class ManageController extends Controller
 {
@@ -28,16 +28,12 @@ class ManageController extends Controller
                 return view("admin.manage.topic")->with('action',$action);
             }        
     }
-    
-    public function add_view()
-    {
 
-    }
     public function add($tablename,Request $data)
     {   
         DB::table($tablename)
         ->updateOrInsert(
-            // ['email' => 'picard@example.com', 'votes' => 0],
+            ['email' => 'picard@example.com', 'votes' => 0],
         );
         return view("admin.manage");
         
