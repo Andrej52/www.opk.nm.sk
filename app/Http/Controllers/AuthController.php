@@ -35,11 +35,14 @@ class AuthController extends Controller
         if ($user === null) {
             dd("zly email");
         }
-  
-        if (Hash::check($request->password, $user->password)) {
-            Auth::login($user);
+            if (Hash::check($request->password, $user->password)) {
+                Auth::login($user);
+            // Store a piece of data in the session...
+            session(['username' => $user->name]);
             return redirect()->route('admin.dashboard');
-        } else {
+        } 
+        else 
+        {
             dd("zle heslo");
         }
     }
@@ -47,6 +50,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        session()->flush();
         return redirect()->route('login');
     }
 }

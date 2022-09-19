@@ -6,6 +6,12 @@
     <title>topics</title>
 </head>
 <body>
-    <h1>Topics html</h1>
+    <div class="body-wrap">
+        <main>
+            <h1>Topics html</h1>
+            <p>there will be data  or form to add </p>
+            
+        </main>
+    </div>
 </body>
 </html>

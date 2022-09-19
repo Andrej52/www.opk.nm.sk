@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ManageController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 
@@ -21,18 +22,19 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [ PageController::class, 'homepage' ]);
 Route::get('/strelectvo', [ PageController::class, 'shooting' ]);
 Route::get('/kynology', [ PageController::class, 'kynology' ]);
-Route::get('/gallery', [ PageController::class, 'gallery' ]);
 Route::get('/contact', [ PageController::class, 'contact' ]);
 Route::get('/courses', [ PageController::class, 'courses' ]);
 Route::get('/oko', [ PageController::class, 'oko_spz' ]);
 Route::get('/OPK_crew', [ PageController::class, 'opk_crew' ]);
 Route::get('/statute', [ PageController::class, 'statutes' ]);
 Route::get('/hunt_statutes', [ PageController::class, 'hunt_statutes' ]);
+Route::get('/Lehota', [ PageController::class, 'shooting_range_Lehota' ]);
+Route::get('/Beckov', [ PageController::class, 'shooting_range_Beckov' ]);
 Route::group([
-], function () {
-    Route::get('/Lehota', [ PageController::class, 'shooting_range_Lehota' ]);
-    Route::get('/Beckov', [ PageController::class, 'shooting_range_Beckov' ]);
-
+    'prefix' => '/gallery',
+],function (){
+    Route::get('/', [ GalleryController::class, 'gallery' ]);
+    Route::get('/content', [ GalleryController::class, 'gallery_content' ]);
 });
 
 // Auth section
@@ -42,15 +44,14 @@ Route::get('logout', [ AuthController::class, 'logout' ])->name('logout');
 
 // Admin section
 Route::group([
-    'prefix' => 'admin',
+    'prefix' => '/admin',
     'middleware' => 'auth',
 ], function () {
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
-    Route::get('/manage/', [ AdminController::class, 'management' ]);
-    Route::get('/manage/topic', [ AdminController::class, 'topic' ]);
-    Route::get('/manage/gallery', [ AdminController::class, 'gallery' ]);
-    Route::get('/manage/event', [ AdminController::class, 'event' ]);
-
+    Route::get('/manage/', [ AdminController::class, 'manage' ]);
+    Route::get('/manage/topic/{action}', [ManageController::class,'check']);
+    Route::get('/manage/gallery/{action}/{id}',[ManageController::class,'check']);
+    Route::get('/manage/event/{action}/l{id}',[ManageController::class,'check']);
     
     // GET: /admin/gallery/create ->zobrazi coreate form
     // POST: /admin/gallery -> vytvori novu galeriu
@@ -58,3 +59,4 @@ Route::group([
     // PATCH/POST /admin/gallery/123 -> updatne data
 
 });
+

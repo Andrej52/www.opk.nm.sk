@@ -1,3 +1,7 @@
+@if(session()->has('username'))
+    @include("components.adminpanel")
+    <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
+@endif
 
 <header><a href="/"><img src="{{ asset('img/logo.png') }}" alt="" id="logo"></a></header>
 
@@ -35,4 +39,5 @@
     <li  class="navbar">
         <a href="oko">OKO spz NMnV</a>
     </li>
+    <div> test deployment</div>
 </nav>

@@ -15,9 +15,8 @@
             <main>
             <h1>Vitajte  admin </h1>
             <li>
-                <a href="">Link1</a>
-                <a href="">Link2</a>
-                <a href="">Link3</a>
+                <a href="/">Hlavná stránka</a>
+                <a href="">Naposledy vykonané zmeny</a>
             </li>
             </main>
         </div>
