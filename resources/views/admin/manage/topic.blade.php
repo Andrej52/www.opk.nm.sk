@@ -12,7 +12,7 @@
             <p> this is page for adding items into DB (FORM) method</p>
             @if ($action == 'add')
             <h3>This is form for adding</h3>
-                            <form action="{{url('action')}}" method="post">
+                            <form action="{{'create'}}" method="post">
                                 <input type="text" name="header">
                                 <input type="file" accept="image/*" name="files[]" multiple>
                                 <input type="file" accept="doc/*" name="text">
@@ -21,7 +21,7 @@
                             </form>
                 @elseif($action == 'edit')
                 <h3>This is form for editting</h3>
-                            <form action="{{url('action')}}" method="post">
+                            <form action="" method="post">
                                 <input type="text" name="header" value="{{'header'}}">
                                 <input type="file" accept="image/*" name="files[]" multiple value="{{'images'}}">
                                 <input type="file" accept="doc/*" name="text" value="{{'text'}}">

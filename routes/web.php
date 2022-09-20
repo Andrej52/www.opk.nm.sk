@@ -48,9 +48,14 @@ Route::group([
     'middleware' => 'auth',
 ], function () {
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
-    Route::get('/manage/', [ AdminController::class, 'manage' ]);
-    Route::get('/manage/topic/{action}', [ManageController::class,'check']);
-    Route::get('/manage/gallery/{action}/{id}',[ManageController::class,'check']);
-    Route::get('/manage/event/{action}/l{id}',[ManageController::class,'check']);
+    Route::group([
+        'prefix'=> '/manage',
+    ],function(){
+    Route::get('/', [ AdminController::class, 'manage' ]);
+    Route::get('/{typename}/{action}', [ManageController::class,'check']);
+    Route::get('/{typename}/{action}/{id}',[ManageController::class,'check']);
+    });
+    
+    Route::post('create',[ManageController::class,'add']);
 });
 

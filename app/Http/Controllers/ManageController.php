@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Request;
 
 class ManageController extends Controller
 {
-   
+    protected $tablename;
     public function show()   //method do get all data from  tables below
     {
         $data[0]=DB::table('topics')->get();
@@ -15,32 +15,40 @@ class ManageController extends Controller
         return $data;
     }
 
-    public function check($action)
+
+    public function check($typename,$action) //method is checking the action of chosen  type of datas
     {
+        $this->tablename =$typename;
             if ($action == "add") 
             {
-                return view("admin.manage.topic")->with('action',$action);
+                echo $typename;
+                return view("admin.manage.".$typename."")->with('action',$action);
             }
             elseif ($action == "edit") 
             {
-                
-                $data =DB::table();
-                return view("admin.manage.topic")->with('action',$action);
+                $url = url()->current();
+                dd($url);
+                $id = substr($url, strrpos($url, '/') + 1);
+                $data =DB::table($typename)
+                ->where('id' == $id)
+                ->get();                
+                $responseData= [$action => 'action',$data =>'data'];
+                return view("admin.manage.".$typename."")->with('responseData',$responseData);
             }        
     }
 
-    public function add($tablename,Request $data)
+    public function add(Request $data) // method used to add data or update them in the  table
     {   
-        DB::table($tablename)
+        DB::table($this->tablename)
         ->updateOrInsert(
             ['email' => 'picard@example.com', 'votes' => 0],
         );
         return view("admin.manage");
         
     }
-    public function delete($tablename,$id)
+    public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific I
     {
-        DB::table($tablename)
+        DB::table($this->tablename)
         ->where('id','=' , $id)
         ->delete();
         return view("admin.manage");
