@@ -56,6 +56,6 @@ Route::group([
     Route::get('/{typename}/{action}/{id}',[ManageController::class,'check']);
     });
     
-    Route::post('create',[ManageController::class,'add']);
 });
+Route::post('/admin/manage/{action}/create',[ManageController::class,'add']);
 
