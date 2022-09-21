@@ -39,11 +39,13 @@ class ManageController extends Controller
 
     public function add(Request $data) // method used to add data or update them in the  table
     {   
+        var_dump($this->tablename);  
+        dd($data);
         DB::table($this->tablename)
         ->updateOrInsert(
             ['email' => 'picard@example.com', 'votes' => 0],
         );
-        return view("admin.manage");
+        //return view("admin.manage");
         
     }
     public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific I
