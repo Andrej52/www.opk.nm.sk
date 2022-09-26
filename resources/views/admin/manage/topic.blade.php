@@ -13,6 +13,7 @@
             @if ($action == 'add')
             <h3>This is form for adding</h3>
                             <form action="{{'create'}}" method="post">
+                                <input type="hidden" name="tablename" value="topics">
                                 <input type="text" name="header">
                                 <input type="file" accept="image/*" name="files[]" multiple>
                                 <input type="file" accept="doc/*" name="text">
@@ -22,6 +23,7 @@
                 @elseif($action == 'edit')
                 <h3>This is form for editting</h3>
                             <form action="" method="post">
+                                <input type="hidden" value="topics">
                                 <input type="text" name="header" value="{{'header'}}">
                                 <input type="file" accept="image/*" name="files[]" multiple value="{{'images'}}">
                                 <input type="file" accept="doc/*" name="text" value="{{'text'}}">

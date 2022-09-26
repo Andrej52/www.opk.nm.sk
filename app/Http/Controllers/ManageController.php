@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class ManageController extends Controller
 {
-    protected $tablename;
+    
     public function show()   //method do get all data from  tables below
     {
         $data[0]=DB::table('topics')->get();
@@ -15,13 +15,10 @@ class ManageController extends Controller
         return $data;
     }
 
-
     public function check($typename,$action) //method is checking the action of chosen  type of datas
     {
-        $this->tablename =$typename;
             if ($action == "add") 
             {
-                echo $typename;
                 return view("admin.manage.".$typename."")->with('action',$action);
             }
             elseif ($action == "edit") 
@@ -37,16 +34,17 @@ class ManageController extends Controller
             }        
     }
 
-    public function add(Request $data) // method used to add data or update them in the  table
-    {   
-        var_dump($this->tablename);  
-        dd($data);
-        DB::table($this->tablename)
+    public function add(Request $request) // method used to add data or update them in the  table
+    {    
+        $tablename = $request->input('tablename');
+        $formData = $request->input();
+        array_shift($formData);
+        /*DB::table($tablename))
         ->updateOrInsert(
-            ['email' => 'picard@example.com', 'votes' => 0],
+            
         );
         //return view("admin.manage");
-        
+        */
     }
     public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific I
     {
