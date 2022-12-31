@@ -21,14 +21,14 @@
                 <section class="manage-section galleries">
                     <p>galerie </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   :</p>
                     <div class="frame">
-                     <a href="manage/gallery/action/add" class="action-btn">Add</a>
+                     <a href="manage/gallery/add" class="action-btn">Add</a>
                     </div>
                 </section>
                 
                 <section class="manage-section events">
                     <p>eventy:</p>
                     <div class="frame">
-                    <a href="manage/event/action/add" class="action-btn">Add</a>
+                    <a href="manage/event/add" class="action-btn">Add</a>
                     </div>
                 </section>
             </main>

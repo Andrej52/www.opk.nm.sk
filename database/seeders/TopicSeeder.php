@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Topic;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Seeder;
 
 class TopicSeeder extends Seeder
@@ -12,8 +14,19 @@ class TopicSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
-        //
+       /*
+        Topic::forceCreate([
+            'heeader' => '',
+            'thumbnail' => '',
+            'image_url' => '',
+            'text',
+            'docs',
+            'usser' =>'',
+        ]);
+      */
+
     }
 }

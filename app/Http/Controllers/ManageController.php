@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Schema; 
 class ManageController extends Controller
 {
     
@@ -35,18 +35,22 @@ class ManageController extends Controller
     }
 
     public function add(Request $request) // method used to add data or update them in the  table
-    {    
+    {
+        //var_dump($request->input());     
         $tablename = $request->input('tablename');
         $formData = $request->input();
         array_shift($formData);
-        /*DB::table($tablename))
-        ->updateOrInsert(
+        var_dump($formData);
+        if (sizeof($formData['docs']) > 1) 
+        {
             
-        );
-        //return view("admin.manage");
-        */
+        }
+        //$result = DB::table($tablename)->updateOrInsert($formData);
+        //var_dump($result);                  
+          //return view("admin.manage");
     }
-    public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific I
+
+    public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific ID
     {
         DB::table($this->tablename)
         ->where('id','=' , $id)

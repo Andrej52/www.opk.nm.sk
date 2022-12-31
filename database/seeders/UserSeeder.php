@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -38,11 +38,13 @@ class UserSeeder extends Seeder
             'password' => '123',
         ]);
         */
+  
         
         User::forceCreate([
             'name' => 'Andrej',
+            'username' => 'admin',
             'email' => 'andrej@gmail.com',
-            'password' => Hash::make('123'),
-        ]);
+            'password' => Hash::make('admin'),
+        ]); 
     }
 }

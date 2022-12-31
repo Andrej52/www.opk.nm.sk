@@ -16,10 +16,21 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->string('header');
-            $table->string('img_url');
+            $table->string('thumbnail');
+            $table->string('path');
+            $table->string('user');
             $table->timestamps();
-        });
+        }); 
+        
+        Schema::create('gallery_images', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('url');
+            $table->string('gallery_id');
+            $table->timestamps();
+        }); 
     }
+
 
     /**
      * Reverse the migrations.
@@ -28,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galleries');
+        //
     }
 };
