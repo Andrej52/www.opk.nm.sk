@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-@if(session()->has('username'))
-    @include("components.adminpanel")
-    <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
-@endif
-
->>>>>>> 2a58b658eb97b0e27372efc829c625e54993044d
 <header><a href="/"><img src="{{ asset('img/logo.png') }}" alt="" id="logo"></a></header>
 
 <nav>
