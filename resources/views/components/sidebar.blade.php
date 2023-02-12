@@ -10,7 +10,7 @@
                 <h5>KONTAKT</h5>
                 <span> Nové Mesto nad Váhom, 915 01</span>
                 <span> <a target="_blank " href="https://goo.gl/maps/ecyfyrqSCZzkKsSi8 "><i class="fa fa-map-marker " aria-hidden="true">&nbsp;</i>Krčméryho 3</a></span>
-                <span> <i class="fa fa-phone "></i>0907 217 779</p></span>
+                <span> <i class="fa fa-phone "></i><a href="tel:+421907217779"> 0907 217 779 </a></p></span>
                 <span> <i class="fa fa-envelope " aria-hidden="true"> Email:</i><a href="mailto:novemesto@nm.opk.sk">novemesto@nm.opk.sk</a> </span>  
             </div>
 
@@ -24,15 +24,15 @@
 
             <div> 
                 <h5>Vedúci kancelárie</h5>
-                <span><i class="fa fa-address-book " aria-hidden="true "></i>Rudolf Hladek</span>
-                <span><i class="fa fa-phone "></i>0907 217 779 </span>
+                <span><i class="fa fa-address-book " aria-hidden="true "></i>Miroslav Čaivič</span>
+                <span><i class="fa fa-phone "></i> <a href="tel:+421907217779"> 0907 217 779 </a></span>
                 <span><i class="fa fa-envelope " aria-hidden="true "></i><a href="mailto:novemesto@nm.opk.sk ">novemesto@nm.opk.sk</a></span>
             </div>
 
             <div> 
                 <h5>Predseda OPK</h5>
                 <span><i class="fa fa-address-book " aria-hidden="true "></i>Ing. Juraj Mrázik </span>
-                <span><i class="fa fa-phone "></i>0905 607 198 </span>
+                <span><i class="fa fa-phone "></i><a href="tel:+421905 607 198">0905 607 198 </a> </span>
             </div>
 
             <div>

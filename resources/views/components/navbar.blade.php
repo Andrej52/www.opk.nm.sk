@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+@if(session()->has('username'))
+    @include("components.adminpanel")
+    <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
+@endif
+
+>>>>>>> 2a58b658eb97b0e27372efc829c625e54993044d
 <header><a href="/"><img src="{{ asset('img/logo.png') }}" alt="" id="logo"></a></header>
 
 <nav>
@@ -5,7 +13,7 @@
         <div class="nav-drop"><a href="/" class="nav-a ">Aktuality</a><button class="dropdown-toggle-button fa fa-caret-down"></button></div>
         <div class="dropdown-content">
             <a  href="strelectvo">Strelectvo</a>
-            <a  href="kynologia">Kynologia</a>
+            <a  href="kynology">Kynologia</a>
             <a  href="gallery">Fotogaléria</a>
         </div>
     </li>
@@ -34,4 +42,5 @@
     <li  class="navbar">
         <a href="oko">OKO spz NMnV</a>
     </li>
+    <div> test deployment</div>
 </nav>
