@@ -32,7 +32,7 @@ Route::group([
 });
 
 // Auth section
-Route::get('login', [ AuthController::class, 'showLoginForm' ])->name('login');
+Route::get('login', [ AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [ AuthController::class, 'loginUser' ])->name('loginUser');
 Route::get('logout', [ AuthController::class, 'logout' ])->name('logout');
 
@@ -42,7 +42,7 @@ Route::group([
     'middleware' => 'auth',
 ], function () {
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
-    Route::get('/manage/', [ AdminController::class, 'manage' ]);
+    Route::get('/management/', [ AdminController::class, 'manage' ]);
     Route::get('/manage/topic', [ AdminController::class, 'topic' ]);
     Route::get('/manage/gallery', [ AdminController::class, 'gallery' ]);
     Route::get('/manage/event', [ AdminController::class, 'event' ]);

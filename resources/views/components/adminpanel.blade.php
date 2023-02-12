@@ -1,7 +1,9 @@
 <section class="adminpanel"> 
-  <li>Prihálesný ako:</li>
-  <li><button><a href="management">Spravovať</a></button></li>
-  <li><button id="SignOut" class="logout-btn" onclick="">Logout</button></li>        
+  <li>Prihálesný ako:  <?php use Illuminate\Support\Facades\Session;
+  echo $value = Session::get('username');
+  ?></li>
+  <li><button><a href="./admin/management">Spravovať</a></button></li>
+  <li><button class="logout-btn"><a href="{{ route('logout') }}">Odhlasit sa</a></button></li>        
 </section>
 
 <script>

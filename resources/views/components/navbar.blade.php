@@ -1,4 +1,3 @@
-
 <header><a href="/"><img src="{{ asset('img/logo.png') }}" alt="" id="logo"></a></header>
 
 <nav>

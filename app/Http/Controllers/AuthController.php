@@ -5,29 +5,25 @@ namespace App\Http\Controllers;
 use Auth;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
 class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('auth.login');
+        if (Session::exists('username'))
+        {
+            return redirect()->route('admin.dashboard');
+        }
+        else
+        {
+            return view('auth.login'); 
+        }
     }
 
     public function loginUser(Request $request)
     {
-        // 1. sposob
-        // request('username');
-
-        // 2. sposob
-        // request()->username;
-
-        // 3. sposob
-        // $request->username;
-
-        // $request->email;
-        // $request->password;
-
         $user = User::where('email', $request->name_or_email)
             ->orWhere('name', $request->name_or_email)
             ->first();
@@ -35,9 +31,11 @@ class AuthController extends Controller
         if ($user === null) {
             dd("zly email");
         }
-  
+        
         if (Hash::check($request->password, $user->password)) {
             Auth::login($user);
+            Session::put('username', $request->name_or_email);
+            session(['key' => 'value']);
             return redirect()->route('admin.dashboard');
         } else {
             dd("zle heslo");
@@ -47,6 +45,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::flush();
         return redirect()->route('login');
     }
 }
