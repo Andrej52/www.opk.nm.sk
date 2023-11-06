@@ -15,7 +15,7 @@
                             <form action="{{'create'}}" method="post">
                                 <input type="hidden" name="tablename" value="topics">
                                 <input type="text" name="header">
-                                <input type="file" accept="image/*" name="thumbnail">
+                                <input type="file" accept="image/*" name="files[]" multiple>
                                 <input type="file" accept="doc/*" name="text">
                                 <input type="file" accept="doc/*" name="docs[]">
                                 <input type="submit" value="submit">          

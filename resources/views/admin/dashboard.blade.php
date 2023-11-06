@@ -4,21 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
     @include("components.styles")
-    <title>Admin-mainPage</title>
+    <title>Document</title>
 </head>
-<body>
 @include("components.navbar")
 @include("components.adminpanel")
-        <div class="body-wrap">
-            <main>
-            <h1>Vitajte  admin </h1>
-            <li>
-                <a href="/">Hlavná stránka</a>
-                <a href="">Naposledy vykonané zmeny</a>
-            </li>
-            </main>
-        </div>
+<body>
+    <div class="intro-text">
+        <h1>Vitajte  admin </h1>
+
+    </div>
+    <div>
+       <select name="last-uploaded" id="uploaded">
+       <option value="topics">prispevky</option>
+       <option value="gallery">fotogaleria</option>
+       <option value="events">udalosti</option>
+       </select>
+       <table>
+        <tr class="changes-header">
+            <th>ID</th>
+            <th>meno</th>
+            <th>akcia</th>
+            <th>datum_zmeny</th>
+            <th>vykonal</th>
+        </tr>
+        <tr class="changes-data">
+            <td>0</td>
+            <td>meno</td>
+            <td>upload</td>
+            <td>2021</td>
+            <td>admin</td>
+        </tr>
+       </table>
+    </div>
+        <p>po logine si tu</p>
 </body>
 </html>
+<style>
+    body
+    {
+        background: gray;
+    }
+</style>

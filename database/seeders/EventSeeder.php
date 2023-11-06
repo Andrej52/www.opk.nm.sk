@@ -1,8 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class EventSeeder extends Seeder
@@ -13,6 +13,7 @@ class EventSeeder extends Seeder
      * @return void
      */
     public function run()
-    { 
+    {
+        //
     }
 }

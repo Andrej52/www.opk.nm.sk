@@ -5,14 +5,7 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        
         <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-
-        <!--
-        <link href="public/assets/css/login.css" rel="stylesheet">
-        <script defer src="public/assets/js/http.js"></script>
--->
     </head>
     <body>         
         <div class="login-wrap">

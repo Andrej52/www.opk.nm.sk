@@ -1,8 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class GallerySeeder extends Seeder
@@ -14,13 +14,6 @@ class GallerySeeder extends Seeder
      */
     public function run()
     {
-        Schema::create('galleries', function (Blueprint $table) {
-            $table->id();
-            $table->string('header');
-            $table->string('thumbnail');
-            $table->timestamp('path');
-            $table->string('user');
-            $table->timestamps();
-        });  
+        //
     }
 }

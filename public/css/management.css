@@ -3,9 +3,7 @@ header
    background-color: rgb(255, 255, 255); 
    width: 100% !important;
 }
-
-header div
-{
+header div{
     color: black;
     display: flex;
     margin: auto;
@@ -16,14 +14,12 @@ main
 {
     min-height: 100vh;
 }
-
 section
 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
 }
-
 .add-btn
 {
     border: 0;
