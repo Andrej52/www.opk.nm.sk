@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
@@ -25,7 +25,7 @@ class AuthController extends Controller
     public function loginUser(Request $request)
     {
         $user = User::where('email', $request->name_or_email)
-            ->orWhere('name', $request->name_or_email)
+            ->orWhere('username', $request->name_or_email)
             ->first();
 
         if ($user === null) {
