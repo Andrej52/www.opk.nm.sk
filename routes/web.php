@@ -7,19 +7,10 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Visitor section
 Route::get('/', [ PageController::class, 'homepage' ]);
+Route::get('/home', [ PageController::class, 'homepage' ]);
 Route::get('/strelectvo', [ PageController::class, 'shooting' ]);
 Route::get('/kynology', [ PageController::class, 'kynology' ]);
 Route::get('/contact', [ PageController::class, 'contact' ]);
@@ -34,7 +25,7 @@ Route::group([
     'prefix' => '/gallery',
 ],function (){
     Route::get('/', [ GalleryController::class, 'gallery' ]);
-    Route::get('/content', [ GalleryController::class, 'gallery_content' ]);
+    Route::get('/content/{id}', [ GalleryController::class, 'gallery_content' ]);
 });
 
 // Auth section
@@ -49,11 +40,6 @@ Route::group([
 ], function () {
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
     Route::get('/management/', [ AdminController::class, 'manage' ]);
-    Route::get('/manage/topic', [ AdminController::class, 'topic' ]);
-    Route::get('/manage/gallery', [ AdminController::class, 'gallery' ]);
-    Route::get('/manage/event', [ AdminController::class, 'event' ]);
-
-    
+    Route::get('/manage/{type}/{action}/{id?}', [ ManageController::class, 'showform' ]);
 });
-Route::post('/admin/manage/{action}/create',[ManageController::class,'add']);
-
+//Route::post('/admin/manage/{action}/',[ManageController::class,'add']);

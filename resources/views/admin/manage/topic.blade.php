@@ -11,26 +11,27 @@
         <main>
             <p> this is page for adding items into DB (FORM) method</p>
             @if ($action == 'add')
-            <h3>This is form for adding</h3>
-                            <form action="{{'create'}}" method="post">
-                                <input type="hidden" name="tablename" value="topics">
-                                <input type="text" name="header">
-                                <input type="file" accept="image/*" name="files[]" multiple>
-                                <input type="file" accept="doc/*" name="text">
-                                <input type="file" accept="doc/*" name="docs[]">
-                                <input type="submit" value="submit">          
-                            </form>
-                @elseif($action == 'edit')
-                <h3>This is form for editting</h3>
-                            <form action="" method="post">
-                                <input type="hidden" value="topics">
-                                <input type="text" name="header" value="{{'header'}}">
-                                <input type="file" accept="image/*" name="files[]" multiple value="{{'images'}}">
-                                <input type="file" accept="doc/*" name="text" value="{{'text'}}">
-                                <input type="file" accept="doc/*" name="docs[]" value="{{'docs'}}">
-                                <input type="submit" value="submit">          
-                            </form>
-                @endif
+                <h3>This is form for adding</h3>
+                <form action="{{'create'}}" method="post">
+                    <input type="hidden" name="tablename" value="topics">
+                    <input type="text" name="" value="nadpis">
+                    <input type="file" accept="image/*" name="files[]" multiple>
+                    <input type="file" accept="doc/*" name="text">
+                    <input type="file" accept="doc/*" name="docs[]">
+                    <input type="submit" value="upload">          
+                </form>
+            @elseif($action == 'edit')
+                    <h3>This is form for editting</h3>
+                    <form action="" method="post">
+                        <input type="hidden" value="topics">
+                        <input type="hidden" name="id" value="{{$data[0]->id}}">
+                        <input type="text" name="header" value="{{$data[0]->Header}}">
+                        <input type="file" accept="image/*" name="files[]" multiple value="$data[0]->image">
+                        <input type="file" accept="doc/*" name="text" value="{{'text'}}">
+                        <input type="file" accept="doc/*" name="docs[]" value="{{'docs'}}">
+                        <input type="submit" value="edit">          
+                    </form>
+            @endif
     
             <div class="loaded-imgs">
                 <div class="thumbnail">

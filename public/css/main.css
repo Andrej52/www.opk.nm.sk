@@ -7,7 +7,6 @@
     --text-color:rgb(255, 255, 255);
     --text-style:sans-serif;
     --spk-logo:url("../img/spk.jpg");
-
 }
 
 html{
@@ -200,6 +199,22 @@ a:hover {
 {
     position: relative;
     right: 55px;
+}
+.dev-div
+{
+    position: fixed;
+    transform: rotate(45deg);
+    width:250px;
+    padding: 10px;
+    height: 50px;
+    right: -70px;
+    top: 30px;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    z-index: 100;
 }
 
 .dropdown

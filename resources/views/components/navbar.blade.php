@@ -34,5 +34,5 @@
     <li  class="navbar">
         <a href="oko">OKO spz NMnV</a>
     </li>
-    <div> test deployment</div>
 </nav>
+<div class="dev-div"><p> test deployment</p></div>

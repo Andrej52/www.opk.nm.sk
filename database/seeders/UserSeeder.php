@@ -23,14 +23,6 @@ class UserSeeder extends Seeder
         $user->email = 'andrej@gmail.com';
         $user->password = '123';
         $user->save();
-
-        // 2. sposob
-        User::forceCreate([
-            'name' => 'Andrej',
-            'email' => 'andrej@gmail.com',
-            'password' => '123',
-        ]);
-
         // 3. sposob
         User::create([
             'name' => 'Andrej',

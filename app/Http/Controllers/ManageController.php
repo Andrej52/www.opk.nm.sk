@@ -2,11 +2,34 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Mockery\Undefined;
 
 class ManageController extends Controller
 {
-    
+    public function showform($type,$action,$id = null)
+    {
+        $tmp = $type.'s';
+
+        if ($action === 'delete') {
+            $this->delete($tmp,$id);
+        }
+        if ($id == null) 
+        {
+           return view('admin.manage.'.$type)
+            ->with('action',$action);
+        }
+
+        $data=DB::table($tmp)
+        ->where('id', '=',$id)
+        ->get();
+        
+        return view('admin.manage.'.$type)
+        ->with('action',$action)
+        ->with('data', $data);
+    }
+
     public function show()   //method do get all data from  tables below
     {
         $data[0]=DB::table('topics')->get();
@@ -15,43 +38,40 @@ class ManageController extends Controller
         return $data;
     }
 
-    public function check($typename,$action) //method is checking the action of chosen  type of datas
-    {
-            if ($action == "add") 
-            {
-                return view("admin.manage.".$typename."")->with('action',$action);
-            }
-            elseif ($action == "edit") 
-            {
-                $url = url()->current();
-                dd($url);
-                $id = substr($url, strrpos($url, '/') + 1);
-                $data =DB::table($typename)
-                ->where('id' == $id)
-                ->get();                
-                $responseData= [$action => 'action',$data =>'data'];
-                return view("admin.manage.".$typename."")->with('responseData',$responseData);
-            }        
-    }
-
-    public function add(Request $request) // method used to add data or update them in the  table
+    public function add(Request $request) //method used to add data or update them in the  table
     {    
         $tablename = $request->input('tablename');
         $formData = $request->input();
         array_shift($formData);
-        /*DB::table($tablename))
-        ->updateOrInsert(
+        var_dump($formData);
+        if (sizeof($formData['docs']) > 1) 
+        {
             
-        );
-        //return view("admin.manage");
-        */
+        }
+        //$result = DB::table($tablename)->updateOrInsert($formData);
+        //var_dump($result);                  
+          //return view("admin.manage");
     }
-    public function delete($id)  // method which is deleteing  chosen  datablock from specific table with specific I
+    public function delete($tablename,$id)  // method which is deleteing  chosen  datablock from specific table with specific Id
     {
-        DB::table($this->tablename)
+        $result=DB::table($tablename)
+        ->where('id','=' , $id)->exists();
+        if ($result != 1) {
+          //  return view("admin.manage");
+        }
+
+        $data=DB::table($tablename)
+        ->where('id','=' , $id)
+        ->get();
+       /* if (!is_dir($data[0]->header)) {
+            # code...
+        }
+        
+        rmdir($path,$data[0]->header."/*");
+        DB::table($tablename)
         ->where('id','=' , $id)
         ->delete();
-        return view("admin.manage");
-        exit();
+        */
+       // return view("admin.manage")
     }
 }

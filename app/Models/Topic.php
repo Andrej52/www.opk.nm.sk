@@ -9,4 +9,12 @@ class Topic extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id',
+        'header',
+        'image',
+        'text',
+        'doc',
+        'user'
+    ];
 }
