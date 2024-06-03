@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
+    'reset' => 'Vaše heslo bolo resetované!',
     'sent' => 'Na email vám bol zaslaný obnovovací link!',
     'throttled' => 'Please wait before retrying.',
     'token' => 'Neplatná obnova hesla.',

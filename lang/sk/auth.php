@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'NEzhoduju sa',
+    'failed' => 'Nezhoduju sa',
     'password' => 'Zadané heslo nie je správne',
     'throttle' => 'Pokúsili ste sa príliš mnoho krát prihlásiť počkajte prosím chvíľu.',
 
