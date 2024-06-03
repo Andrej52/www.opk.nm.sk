@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->string('email');
-            $table->string('password');
+            $table->unsignedBigInteger('topic_id');
+            $table->string('path');
             $table->timestamps();
+
+
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 
@@ -30,6 +31,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('images', function (Blueprint $table) {
+            $table->dropForeign(['topic_id']);
+        });
+        Schema::dropIfExists('files');
     }
 };

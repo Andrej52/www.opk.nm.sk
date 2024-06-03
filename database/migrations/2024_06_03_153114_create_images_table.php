@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
-            $table->string('thumbnail');
-            $table->string('text');
-            $table->string('docs');
+            $table->unsignedBigInteger('topic_id'); // Assuming topic_id is a foreign key
+            $table->string('path');
+            $table->string('user_added');
             $table->timestamps();
-          //  $table->string('url');
-
-        });  
+        });
     }
 
     /**
@@ -32,6 +29,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('images', function (Blueprint $table) {
+            $table->dropForeign(['topic_id']);
+        });
+        Schema::dropIfExists('images');
     }
 };

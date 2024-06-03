@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('oko_spz', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
-            $table->timestamp('date');
-            $table->string('user');
-            $table->timestamps();
-        }); 
+            $table->string('First Name');
+            $table->string('Surname');
+            $table->string('Function');
+            $table->string('Function_en');
+            $table->string('phone');
+            $table->string('email');
+        });
     }
 
     /**
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('oko_spz');
     }
 };

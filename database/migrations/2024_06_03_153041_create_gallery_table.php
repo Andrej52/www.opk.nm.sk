@@ -13,16 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->string('header');
             $table->string('thumbnail');
-            $table->string('text');
-            $table->string('docs');
+            $table->string('user');
             $table->timestamps();
-          //  $table->string('url');
-
-        });  
+        }); 
+        
+        Schema::create('gallery_images', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('url');
+            $table->integer('order_num');
+            $table->string('gallery_id');
+            $table->timestamps();
+        }); 
     }
 
     /**
@@ -32,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topics');
+        Schema::dropIfExists('galleries');
     }
 };

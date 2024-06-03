@@ -13,24 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
-            $table->id();
-            $table->string('header');
-            $table->string('thumbnail');
-            $table->string('path');
-            $table->string('user');
-            $table->timestamps();
-        }); 
-        
-        Schema::create('gallery_images', function (Blueprint $table) {
+        Schema::create('gallery_imgs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('url');
-            $table->string('gallery_id');
+            $table->integer('order_num');
+            $table->unsignedBigInteger('gallery_id');
             $table->timestamps();
+
+            $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');
         }); 
     }
-
 
     /**
      * Reverse the migrations.
@@ -39,6 +32,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('gallery_images', function (Blueprint $table) {
+            $table->dropForeign(['gallery_id']);
+        });
+        Schema::dropIfExists('gallery_imgs');
     }
 };

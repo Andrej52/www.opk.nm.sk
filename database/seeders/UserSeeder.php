@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
@@ -32,9 +32,21 @@ class UserSeeder extends Seeder
         */
         
         User::forceCreate([
+            'username'=> 'admin',
             'name' => 'Andrej',
             'email' => 'andrej@gmail.com',
             'password' => Hash::make('123'),
+            'privilage_id' => '1'
+        ]);
+
+        User::forceCreate([
+            'username' => 'juraj62',
+            'fristname' => 'Juraj',
+            'surname' => 'Mrázik',
+            'email' => 'ingrurajmrazik@gmail.com',
+            'password' => Hash::make('aa'),
+            'privilage_id' => '2'
         ]);
     }
 }
+ 

@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('changes', function (Blueprint $table) {
             $table->id();
-          //  $table->int('id');
-            $table->string('description')->nullable;
-            $table->timestamps();
+            $table->string('changed_by');
+            $table->string('change_subj');
+            $table->string('changes');
+            $table->timestamp('changed_at');
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('changes');
     }
 };
