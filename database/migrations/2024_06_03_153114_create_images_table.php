@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('topic_id'); // Assuming topic_id is a foreign key
+            $table->unsignedBigInteger('topic_id');
             $table->string('path');
             $table->string('user_added');
             $table->timestamps();
+
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 

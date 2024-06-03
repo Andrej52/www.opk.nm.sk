@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('privilages', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
-            $table->string('thumbnail');
-            $table->string('user');
-            $table->timestamps();
-        }); 
+            $table->string('priv_name');
+            $table->json('allowed')->nullable();
+        });
     }
 
     /**
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('privilages');
     }
 };

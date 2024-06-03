@@ -33,7 +33,8 @@ class UserSeeder extends Seeder
         
         User::forceCreate([
             'username'=> 'admin',
-            'name' => 'Andrej',
+            'firstname' => 'Andrej',
+            'surname'=> 'andrj',
             'email' => 'andrej@gmail.com',
             'password' => Hash::make('123'),
             'privilage_id' => '1'
@@ -41,7 +42,7 @@ class UserSeeder extends Seeder
 
         User::forceCreate([
             'username' => 'juraj62',
-            'fristname' => 'Juraj',
+            'firstname' => 'Juraj',
             'surname' => 'Mrázik',
             'email' => 'ingrurajmrazik@gmail.com',
             'password' => Hash::make('aa'),

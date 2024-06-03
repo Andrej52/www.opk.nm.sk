@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('firstname');
-            $table->string('surname');
+            $table->string('surname')->default();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('');
+            $table->integer('privilage_id')->references('id')->on('privilages')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -33,6 +33,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['privilage_id']);
+        });
         Schema::dropIfExists('users');
     }
 };

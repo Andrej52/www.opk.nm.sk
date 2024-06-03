@@ -19,9 +19,8 @@ return new class extends Migration
             $table->string('thumbnail');
             $table->string('text');
             $table->string('docs');
+            $table->string('subpage');
             $table->timestamps();
-          //  $table->string('url');
-
         });  
     }
 
