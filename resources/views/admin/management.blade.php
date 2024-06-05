@@ -15,23 +15,23 @@
             <main>
                 <h1>Vitajte  v managemente </h1>
                 <section class="manage-section topics">
-                    <p>prispevky:</p>
+                    <h4>prispevky:</h4>
                     <div class="frame">
-                        <a href="manage/topic/add/null" class="action-btn">Add</a>
+                        <a href="manage/topic/add/null" class="action-btn">Pridaj</a>
                     </div>
                 </section>
 
                 <section class="manage-section galleries">
-                    <p>galerie </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   :</p>
+                    <h4>galerie </h4>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   :</h4>
                     <div class="frame">
-                     <a href="manage/gallery/add/null" class="action-btn">Add</a>
+                     <a href="manage/gallery/add/null" class="action-btn">Pridaj</a>
                     </div>
                 </section>
                 
                 <section class="manage-section events">
-                    <p>eventy:</p>
+                    <h4>eventy:</h4>
                     <div class="frame">
-                    <a href="manage/event/add/null" class="action-btn">Add</a>
+                    <a href="manage/event/add/null" class="action-btn">Pridaj</a>
                     </div>
                 </section>
             </main>
