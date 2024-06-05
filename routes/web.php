@@ -41,5 +41,9 @@ Route::group([
     Route::get('/', [ AdminController::class, 'dashboard' ])->name('admin.dashboard');
     Route::get('/management/', [ AdminController::class, 'manage' ]);
     Route::get('/manage/{type}/{action}/{id?}', [ ManageController::class, 'showform' ]);
+
+    // creating and editing and deleting 
+    Route::post('/manage/{type}/create',[ManageController::class,'add']);
+    Route::put('/manage/{type}/edit/{id}', [ManageController::class, 'update']);
+    Route::get('/manage/{type}/remove',[ManageController::class,'delete']);
 });
-//Route::post('/admin/manage/{action}/',[ManageController::class,'add']);
